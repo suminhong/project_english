@@ -1,3 +1,17 @@
+<?php
+    $conn=mysqli_connect('localhost','root','9701hong','awscop');
+
+    settype($_POST['id'], 'integer');
+    $filtered = array(
+        'id' => mysqli_real_escape_string($conn, $_POST['id'])
+    );
+
+    $sql = "
+        DELETE FROM 월급관리 WHERE id = '{$filtered['id']}'
+        ";
+
+    $result = mysqli_multi_query($conn, $sql);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +31,14 @@
 		</ul>
 	</div><!--header-->
 	<div id="contents">
-		<h1>AWSCOP 월급관리 서비스</h1>
-		<img src="images/1.jpg">
+		<?php
+			if($result === false) {
+        		echo '삭제하는 과정에서 오류가 발생하였습니다. 관리자에게 문의하세요.';
+        		echo error_log(mysqli_error($conn));
+    		} else {
+        		header('Location: print.php');
+    		}
+		?>
 	</div><!--contents-->
 	<div id="footer">
 		<div>

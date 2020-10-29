@@ -12,8 +12,8 @@
 			<a href="index.php"><img src="images/logo.png" alt="LOGO"></a>
 		</div>
 		<ul id="navigation">
-			<li><a href="create.php">등록</a></li>
-			<li><a href="print.php">조회</a></li>
+			<li><a href="create.php">신규등록</a></li>
+			<li><a href="print.php">조회/수정</a></li>
 		</ul>
 	</div><!--header-->
 	<div id="contents">

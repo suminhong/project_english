@@ -34,7 +34,10 @@
      			</tr>
     		</thead>
       		<?php
-	        	$sql = "SELECT * FROM 월급관리";
+
+      			$filtered_name=mysqli_real_escape_string($conn,$_POST['name']);
+
+	        	$sql = "SELECT * FROM 월급관리 WHERE 이름 LIKE '%{$filtered_name}%'";
 		        $result = mysqli_query($conn, $sql);
 		        while( $row = mysqli_fetch_array($result)) {
 		          	$filtered = array(
@@ -58,7 +61,7 @@
 			    <td><?= $filtered['월급'] ?></td>
 			    <td><a href="update.php?id=<?php echo $filtered['id'] ?>">수정</a></td>
           		<td>
-            		<form action="delete.php" method="post" onsubmit="if(!confirm('정말 삭제하시겠습니까?')){return false;}">
+            		<form action="delete.php" method="post" onsubmit="if(!confirm('sure')){return false;}">
               			<input type="hidden" name="id" value="<?= $filtered['id'] ?>">
               			<input type="submit" value="삭제">         
             		</form>

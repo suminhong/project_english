@@ -1,3 +1,39 @@
+<?php
+	$conn=mysqli_connect('localhost','root','9701hong','awscop');
+
+	$basic=$_POST['basic'];
+	$extra=$_POST['extra'];
+
+	if ($basic <=2000000){
+		$tax=0.01;
+	}
+	elseif ($basic<=4000000) {
+		$tax=0.02;
+	}
+	else {
+		$tax=0.03;
+	}
+
+	$salary=($basic+$extra)*(1-$tax);
+
+	$filtered=array(
+		'name' => mysqli_real_escape_string($conn, $_POST['name']),
+		'rank' => mysqli_real_escape_string($conn, $_POST['rank']),
+	);
+
+	$sql="
+		INSERT INTO 월급관리 (이름, 직급, 기본급, 수당, 세율, 월급)
+		VALUES (
+			'{$filtered['name']}',
+			'{$filtered['rank']}',
+			$basic,
+			$extra,
+			$tax,
+			$salary
+		)"
+	;
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +53,15 @@
 		</ul>
 	</div><!--header-->
 	<div id="contents">
-		<h1>AWSCOP 월급관리 서비스</h1>
-		<img src="images/1.jpg">
+		<?php
+			$result=mysqli_query($conn, $sql);
+			if($result === false) {
+				echo '글 등록 오류가 발생하였습니다. 관리자에게 문의하세요.';
+        		echo error_log(mysqli_error($conn));
+			} else {
+        		echo '정상적으로 등록되었습니다.<br> <a href="index.php">메인 페이지로 돌아가기</a>';
+    		}
+		?>
 	</div><!--contents-->
 	<div id="footer">
 		<div>

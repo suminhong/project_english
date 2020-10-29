@@ -1,3 +1,9 @@
+<?php
+	$conn=mysqli_connect('localhost','root','9701hong','awscop');	
+
+	settype($_GET['id'], 'integer');
+	$a=$_GET['id'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +23,24 @@
 		</ul>
 	</div><!--header-->
 	<div id="contents">
-		<h1>AWSCOP 월급관리 서비스</h1>
-		<img src="images/1.jpg">
+		<?php
+			$sql="SELECT * FROM 월급관리 WHERE id=$a";
+			$result=mysqli_query($conn, $sql);
+			$row = mysqli_fetch_array($result);
+			$filtered = array(
+	            '이름' => htmlspecialchars($row['이름']),
+	            '직급' => htmlspecialchars($row['직급']),
+	            '기본급' => htmlspecialchars($row['기본급']),
+	            '수당' => htmlspecialchars($row['수당'])
+        	);
+		?>
+  		<form action="update_process.php?id=<?php echo $_GET['id'] ?>" method="post">
+			<p><input type="text" name="name" placeholder="이름" value="<?= $filtered['이름'] ?>"></p>
+			<p><input type="text" name="rank" placeholder="직급" value="<?= $filtered['직급'] ?>"></p>
+			<p><input type="text" name="basic" placeholder="기본급" value="<?= $filtered['기본급'] ?>"></p>
+			<p><input type="text" name="extra" placeholder="수당" value="<?= $filtered['수당'] ?>"></p>
+			<p><input type="submit" value="수정"></p>
+		</form>
 	</div><!--contents-->
 	<div id="footer">
 		<div>
