@@ -10,6 +10,7 @@
 	<meta charset="utf-8">
 	<title>AWSCOP</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
 </head>
 <body>
 	<div id="page">
@@ -23,6 +24,7 @@
 		</ul>
 	</div><!--header-->
 	<div id="contents">
+		<p id="member">정보를 입력하시오</p>
 		<?php
 			$sql="SELECT * FROM 월급관리 WHERE id=$a";
 			$result=mysqli_query($conn, $sql);
@@ -34,13 +36,15 @@
 	            '수당' => htmlspecialchars($row['수당'])
         	);
 		?>
-  		<form action="update_process.php?id=<?php echo $_GET['id'] ?>" method="post">
-			<p><input type="text" name="name" placeholder="이름" value="<?= $filtered['이름'] ?>"></p>
-			<p><input type="text" name="rank" placeholder="직급" value="<?= $filtered['직급'] ?>"></p>
-			<p><input type="text" name="basic" placeholder="기본급" value="<?= $filtered['기본급'] ?>"></p>
-			<p><input type="text" name="extra" placeholder="수당" value="<?= $filtered['수당'] ?>"></p>
-			<p><input type="submit" value="수정"></p>
-		</form>
+		<p>
+	  		<form id="member" action="update_process.php?id=<?php echo $_GET['id'] ?>" method="post">
+				<p><input type="text" name="name" placeholder="이름" value="<?= $filtered['이름'] ?>"></p>
+				<p><input type="text" name="rank" placeholder="직급" value="<?= $filtered['직급'] ?>"></p>
+				<p><input type="text" name="basic" placeholder="기본급" value="<?= $filtered['기본급'] ?>"></p>
+				<p><input type="text" name="extra" placeholder="수당" value="<?= $filtered['수당'] ?>"></p>
+				<p><input type="submit" value="수정"></p>
+			</form>
+		</p>
 	</div><!--contents-->
 	<div id="footer">
 		<div>

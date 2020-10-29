@@ -40,6 +40,7 @@
 	<meta charset="utf-8">
 	<title>AWSCOP</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
 </head>
 <body>
 	<div id="page">

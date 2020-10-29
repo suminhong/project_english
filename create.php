@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>AWSCOP</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
 </head>
 <body>
 	<div id="page">
@@ -17,13 +18,16 @@
 		</ul>
 	</div><!--header-->
 	<div id="contents">
-		<form action="create_process.php" method="post">
-			<p><input type="text" name="name" placeholder="이름"></p>
-			<p><input type="text" name="rank" placeholder="직급"></p>
-			<p><input type="text" name="basic" placeholder="기본급"></p>
-			<p><input type="text" name="extra" placeholder="수당"></p>
-			<p><input type="submit" value="등록"></p>
-		</form>
+		<p id="member">정보를 입력하시오</p>
+		<p>
+			<form id="member" action="create_process.php" method="post">
+				<p><input type="text" name="name" placeholder="이름"></p>
+				<p><input type="text" name="rank" placeholder="직급"></p>
+				<p><input type="text" name="basic" placeholder="기본급"></p>
+				<p><input type="text" name="extra" placeholder="수당"></p>
+				<p><input type="submit" value="등록"></p>
+			</form>
+		</p>
 	</div><!--contents-->
 	<div id="footer">
 		<div>
