@@ -55,7 +55,7 @@
 			</li>
 		</ul><!--links-->
 		<p class="footnote">
-			© Copyright 2023.Company name all rights reserved
+			© 2020. Hong Su Min all rights reserved.
 		</p>
 	</div><!--footer-->
 	</div>
