@@ -87,13 +87,10 @@
 				<h4>Social Links</h4>
 				<ul id="connect">
 					<li>
-						<a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" class="twitter">Twitter</a>
+						<a href="https://twitter.com/" target="_blank" class="twitter">Twitter</a>
 					</li>
 					<li>
-						<a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" class="facebook">Facebook</a>
-					</li>
-					<li>
-						<a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus">Google +</a>
+						<a href="https://www.facebook.com/" target="_blank" class="facebook">Facebook</a>
 					</li>
 				</ul><!--connect-->
 			</li>
