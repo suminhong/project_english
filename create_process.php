@@ -1,5 +1,5 @@
 <?php
-	$conn=mysqli_connect('localhost','root','9701hong','awscop');
+	$conn=mysqli_connect('localhost','pj-user','1234','awscop');
 
 	$basic=$_POST['basic'];
 	$extra=$_POST['extra'];
@@ -22,7 +22,7 @@
 	);
 
 	$sql="
-		INSERT INTO 월급관리 (이름, 직급, 기본급, 수당, 세율, 월급)
+		INSERT INTO employee_salary (name, position, base_pay, extra_pay, tax_rate, salary)
 		VALUES (
 			'{$filtered['name']}',
 			'{$filtered['rank']}',

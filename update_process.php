@@ -1,5 +1,5 @@
 <?php
-	$conn=mysqli_connect('localhost','root','9701hong','awscop');
+	$conn=mysqli_connect('localhost','pj-user','1234','awscop');
 
 	settype($_GET['id'], 'integer');
 
@@ -25,8 +25,8 @@
 	);
 
 	$sql="
-		UPDATE 월급관리
-		SET 이름='{$filtered['name']}',직급='{$filtered['rank']}',기본급=$basic,수당=$extra,세율=$tax,월급=$salary
+		UPDATE employee_salary
+		SET name='{$filtered['name']}',position='{$filtered['rank']}',base_pay=$basic,extra_pay=$extra,tax_rate=$tax,salary=$salary
 		WHERE id='{$filtered['id']}';
 		"
 	;

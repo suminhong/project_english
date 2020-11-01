@@ -1,5 +1,5 @@
 <?php
-	$conn=mysqli_connect('localhost','root','9701hong','awscop');
+	$conn=mysqli_connect('localhost','pj-user','1234','awscop');
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,17 +38,17 @@
 
       			$filtered_name=mysqli_real_escape_string($conn,$_POST['name']);
 
-	        	$sql = "SELECT * FROM 월급관리 WHERE 이름 LIKE '%{$filtered_name}%'";
+	        	$sql = "SELECT * FROM employee_salary WHERE name LIKE '%{$filtered_name}%'";
 		        $result = mysqli_query($conn, $sql);
 		        while( $row = mysqli_fetch_array($result)) {
 		          	$filtered = array(
 			            'id' => htmlspecialchars($row['id']),
-			            '이름' => htmlspecialchars($row['이름']),
-			            '직급' => htmlspecialchars($row['직급']),
-			            '기본급' => htmlspecialchars($row['기본급']),
-			            '수당' => htmlspecialchars($row['수당']),
-			            '세율' => htmlspecialchars($row['세율']),
-			            '월급' => htmlspecialchars($row['월급'])
+			            '이름' => htmlspecialchars($row['name']),
+			            '직급' => htmlspecialchars($row['position']),
+			            '기본급' => htmlspecialchars($row['base_pay']),
+			            '수당' => htmlspecialchars($row['extra_pay']),
+			            '세율' => htmlspecialchars($row['tax_rate']),
+			            '월급' => htmlspecialchars($row['salary'])
 		        	);
 	      	?>
     		<tbody>

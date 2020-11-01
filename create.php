@@ -21,10 +21,10 @@
 		<p id="member">정보를 입력하시오</p>
 		<p>
 			<form id="member" action="create_process.php" method="post">
-				<p><input type="text" name="name" placeholder="이름"></p>
-				<p><input type="text" name="rank" placeholder="직급"></p>
-				<p><input type="text" name="basic" placeholder="기본급"></p>
-				<p><input type="text" name="extra" placeholder="수당"></p>
+				<p><input type="text" name="name" placeholder="name"></p>
+				<p><input type="text" name="rank" placeholder="position"></p>
+				<p><input type="text" name="basic" placeholder="base_pay"></p>
+				<p><input type="text" name="extra" placeholder="extra_pay"></p>
 				<p><input type="submit" value="등록"></p>
 			</form>
 		</p>

@@ -1,5 +1,5 @@
 <?php
-    $conn=mysqli_connect('localhost','root','9701hong','awscop');
+    $conn=mysqli_connect('localhost','pj-user','1234','awscop');
 
     settype($_POST['id'], 'integer');
     $filtered = array(
@@ -7,7 +7,7 @@
     );
 
     $sql = "
-        DELETE FROM 월급관리 WHERE id = '{$filtered['id']}'
+        DELETE FROM employee_salary WHERE id = '{$filtered['id']}'
         ";
 
     $result = mysqli_multi_query($conn, $sql);
